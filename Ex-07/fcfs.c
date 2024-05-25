@@ -1,6 +1,6 @@
 #include<stdio.h>
 #include<string.h>
-
+ 
 int main(){
 	int n,i;
 	printf("How many processes?:");
