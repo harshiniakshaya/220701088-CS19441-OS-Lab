@@ -9,10 +9,10 @@
 ### Exp 5:
 - [System call tracing](Ex-05)
 ### Exp 6:
-- [IPC using shared memory - sender.c](Ex-06/sender.c)
+- [IPC using shared memory - sender.c](Ex-06/sender.c) 
 - [IPC using shared memory - receiver.c](Ex-06/receiver.c)
 ### Exp 7 - Scheduling Techniques:
-- [First In First Out](Ex-07/fcfs.c)
+- [First In First Out](Ex-07/fcfs.c) - [output](Ex-07/fcfs-output.png)
 - [Shortest Job First](Ex-07/sjf.c)
 - [Priority Scheduling](Ex-07/ps.c)
 - [Round Robin](Ex-07/rr.c)
