@@ -33,22 +33,20 @@ int main() {
         }
     }
 
-    int ct[n], cta = 0;
-    for (i = 0; i < n; i++) {
-        cta += btime[i];
-        ct[i] = cta;
+    int tot_wat=0;
+    int temp=0; int tat[n];
+    for(int i=0;i<n;i++){
+        tat[i]=btime[i]+temp;
+        temp=tat[i];
     }
-
-    int bt = 0;
-    int bta = 0;
+    
     printf("Process\tWaiting Time\tTurnaround Time\n");
     for (i = 0; i < n; i++) {
-        printf("%s\t%d\t\t%d\n", name[i], bt, ct[i]);
-        bt += btime[i];
-        bta += bt;
+        printf("%s\t%d\t\t%d\n", name[i], tat[i]-btime[i], tat[i]);
+        tot_wat+=tat[i]-btime[i];
     }
 
-    printf("The average waiting time: %d\n", bta / n);
+    printf("The average waiting time: %d\n", tot_wat/n);
 
     return 0;
 }
