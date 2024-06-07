@@ -1,7 +1,7 @@
 #include <stdio.h>
 
 int main() {
-    int bt[20], p[20], wt[20], tat[20], pr[20], i, j, n, total = 0, pos, temp;
+    int bt[20], p[20], wt[20], pr[20], i, j, n, total = 0, temp;
     float avg_wt, avg_tat;
 
     printf("Enter Total Number of Processes: ");
@@ -18,54 +18,52 @@ int main() {
     }
 
     // Sorting processes based on priority
-    for (i = 0; i < n; i++) {
-        pos = i;
+    for (i = 0; i < n - 1; i++) {
         for (j = i + 1; j < n; j++) {
-            if (pr[j] < pr[pos]) {
-                pos = j;
+            if (pr[j] < pr[i]) {
+                // Swap priority
+                temp = pr[i];
+                pr[i] = pr[j];
+                pr[j] = temp;
+
+                // Swap burst time
+                temp = bt[i];
+                bt[i] = bt[j];
+                bt[j] = temp;
+
+                // Swap process number
+                temp = p[i];
+                p[i] = p[j];
+                p[j] = temp;
             }
         }
-
-        // Swap priority
-        temp = pr[i];
-        pr[i] = pr[pos];
-        pr[pos] = temp;
-
-        // Swap burst time
-        temp = bt[i];
-        bt[i] = bt[pos];
-        bt[pos] = temp;
-
-        // Swap process number
-        temp = p[i];
-        p[i] = p[pos];
-        p[pos] = temp;
     }
 
-    wt[0] = 0; // Waiting time for first process is 0
+    // Declare arrays for turnaround time and waiting time
+    int tat[n];
+    temp = 0;
 
-    // Calculate waiting time
-    for (i = 1; i < n; i++) {
-        wt[i] = 0;
-        for (j = 0; j < i; j++) {
-            wt[i] += bt[j];
-        }
-        total += wt[i];
+    // Calculate turnaround time
+    for (i = 0; i < n; i++) {
+        tat[i] = temp + bt[i];
+        temp = tat[i];
     }
 
-    avg_wt = (float)total / n; // Average waiting time
-    total = 0;
+    // Calculate waiting time and total waiting time
+    int tot_wat = 0;
+    int tot_tat=0;
 
     printf("\nProcess\tBurst Time\tWaiting Time\tTurnaround Time");
     for (i = 0; i < n; i++) {
-        tat[i] = bt[i] + wt[i]; // Turnaround time
-        total += tat[i];
-        printf("\nP[%d]\t\t%d\t\t%d\t\t%d", p[i], bt[i], wt[i], tat[i]);
+        printf("\nP[%d]\t\t%d\t\t%d\t\t%d", p[i], bt[i], tat[i]-bt[i], tat[i]);
+	tot_tat+=tat[i];
+	tot_wat+=tat[i]-bt[i];
     }
 
-    avg_tat = (float)total / n; // Average turnaround time
-    printf("\n\nAverage Waiting Time = %.2f", avg_wt);
-    printf(" sec\nAverage Turnaround Time = %.2f sec\n", avg_tat);
+    
+    printf("\nAverage Waiting Time = %d", tot_wat/n);
+    printf("\nAverage Turnaround Time = %d", tot_tat/n);
 
     return 0;
 }
+
