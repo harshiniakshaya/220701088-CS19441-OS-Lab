@@ -1,11 +1,11 @@
 # 220701088-CS19441-OS-Lab
 ### Exp 2:
-- [System monitoring using shell script](Ex-02/shellscript.sh)
+- [System monitoring using shell script](Ex-02)
 ### Exp 3:
-- [Employee average pay](Ex-03/a/avg.awk)
-- [Results of an examination](Ex-03/b/pass.awk)
+- [Employee average pay](Ex-03/a)
+- [Results of an examination](Ex-03/b)
 ### Exp 4:
-- [Signal catching](Ex-04/signal.c)
+- [Signal catching](Ex-04)
 ### Exp 5:
 - [System call tracing](Ex-05/systemcall.sh)
 ### Exp 6:
