@@ -12,7 +12,8 @@
 - [IPC using shared memory - sender.c](Ex-06/sender.c) 
 - [IPC using shared memory - receiver.c](Ex-06/receiver.c)
 ### Exp 7 - Scheduling Techniques:
-- [First In First Out](Ex-07/fcfs.c)  - [output](Ex-07/fcfs-output.png)
+- [First In First Out](Ex-07/fcfs.c)
+- - [output](Ex-07/fcfs-output.png)
 - [Shortest Job First](Ex-07/sjf.c)   - [output](Ex-07/sjf-output.png) 
 - [Priority Scheduling](Ex-07/ps.c)   - [output](Ex-07/ps-output.png)
 - [Round Robin](Ex-07/rr.c)           - [output](Ex-07/rr-output.png)
