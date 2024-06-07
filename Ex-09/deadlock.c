@@ -40,7 +40,7 @@ int main() {
                 }
                 if (flag == 0) {
                     ans[ind] = j;
-		                ind++;
+		    ind++;
                     for (k = 0; k < m; k++) {
                         avail[k] += alloc[j][k];
                     }
