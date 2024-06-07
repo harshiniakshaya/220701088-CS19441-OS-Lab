@@ -3,7 +3,7 @@
 void FIFO(int pages[], int n, int frames) {
     int frame[frames];
     int index = 0;
-    int faults = 0;
+    int faults = 0; 
 
     // Initialize frames
     for (int i = 0; i < frames; i++) {
